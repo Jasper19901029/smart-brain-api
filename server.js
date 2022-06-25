@@ -9,6 +9,7 @@ const image = require("./controllers/image");
 const app = express();
 
 // must give it a variable
+/* 本機開發用
 const db = knex({
   client: "pg",
   connection: {
@@ -16,6 +17,17 @@ const db = knex({
     user: "postgres",
     password: "zzzz",
     database: "smart-brain",
+  },
+});
+*/
+
+// 真正上傳
+const db = knex({
+  client: "pg",
+  connection: {
+    host: "postgresql-transparent-22062"
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 
