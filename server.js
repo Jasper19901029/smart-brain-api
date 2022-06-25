@@ -25,8 +25,7 @@ const db = knex({
 const db = knex({
   client: "pg",
   connection: {
-    host: "postgresql-transparent-22062"
-    connectionString: process.env.DATABASE_URL,
+    host: process.env.DATABASE_URL,
     ssl: true,
   },
 });
