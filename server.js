@@ -20,7 +20,7 @@ const db = knex({
   },
 });
 */
-
+//   "main": "index.js", 站存
 // 真正上傳
 const db = knex({
   client: "pg",
