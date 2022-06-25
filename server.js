@@ -7,7 +7,7 @@ const register = require("./controllers/register");
 const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
-
+const port = process.env.PORT || 3000;
 // must give it a variable
 /* 本機開發用
 const db = knex({
@@ -87,7 +87,7 @@ app.post("/imageurl", (req, res) => {
   image.handleApiCall(req, res);
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(port, () => {
   console.log(`app is running on port ${process.env.PORT}`);
 });
 
