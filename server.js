@@ -8,6 +8,9 @@ const signin = require("./controllers/signin");
 const profile = require("./controllers/profile");
 const image = require("./controllers/image");
 
+app.use(express.json());
+app.use(cors());
+
 // must give it a variable
 /* 本機開發用
 const db = knex({
@@ -26,16 +29,13 @@ const db = knex({
   client: "pg",
   connection: {
     connectionString: process.env.DATABASE_URL,
-    ssl: true,
+    SSL: true,
   },
 });
 
 db.select("*")
   .from("users")
   .then((data) => {});
-
-app.use(express.json());
-app.use(cors());
 
 /* before connect real database
 const database = {
